@@ -1,0 +1,25 @@
+{% extends "www.speedycomputers.us.htm" %}
+{% load i18n %}
+
+{% block content %}<h1><font color="#CC3300">Mi Presupuesto</font></h1>
+<p>
+<table>
+<thead>
+<td width="70%">Gastos</td>
+<td width="30%">Cantidad</td>
+</thead>
+{% for p in Presupuesto %}
+    <tr>
+     <td width="70%">{{ p.tipo_de_gasto }}</td> 
+     <td width="30%" align="right">{{ p.cantidad }}</td> 
+    </tr>
+{% endfor %}
+<tfoot >
+     <td width="70%">Total</td> 
+     <td width="30%" align="right"> {{ total }}</td> 
+    </tfoot>
+</table>
+<p>
+<div class="content taf">
+</p>
+<p>{% endblock %}</p>

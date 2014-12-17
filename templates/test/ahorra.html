@@ -1,0 +1,32 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'El hombre mas rico de babilonia' %}{% endblock %}
+
+{% block content %}
+
+<div id="content-main">
+  <form action="/ahorra/" method="post" id="login-form">
+  </br></br>
+
+  <table width="680">
+  <tr>
+
+  <td>
+    &nbsp;<label for="id_username">Salario Mensual Neto:</label> <input type="text" align="right" name="salario" id="id_username" value = "{{salario}}" /> <br></br>
+    &nbsp;<label for="id_password">Ahorro Mensual (0.x %):</label> <input type="text" align="right" name="ahorro" id="id_password" value = "{{ahorro}}" /> <br></br>
+    &nbsp;<label for="id_password1">Interes Anual (0.x %):</label><input type="text" align="right" name="interes" value="{{interes}}" /><br> </br>
+  </br>
+    <center> <label>&nbsp;</label><input type="submit" value="Cuando" > </center>
+   </td>
+
+  <td>
+    <center> {{list}} </center>
+  </td>
+
+  </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}

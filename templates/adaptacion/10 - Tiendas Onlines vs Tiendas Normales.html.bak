@@ -1,0 +1,21 @@
+﻿{% extends "donate.htm" %}
+
+{% block content %}
+<span lang="es">
+<h1>Comprar en Internet o en la Tienda?</h1>
+<p>Obviamente cada uno tiene sus propios gustos y temores y lo único que pretendo es darle un poco de datos para tomar su decisión personal.
+<p>Por supuesto si lo que se va a comprar es algo como cómida recién hecha o la ropa que uno se va a poner me parece que no cabe dudas, para la mayoría de los mortales la elección seria ir a una tienda. 
+<p>Si por otro lado, lo que pretendes es salir fuera de su casa e ir explorando los lugares, dedicando un buen tiempo en esto pero a la vez disfrutando, pues te gusta comprar y mirar las muchas opciones existentes en las tiendas de miami.
+<p> Sin embargo, si lo que le gusta es comprar rápido y a la vez revisar bien que dice la gente de los productos antes de comprar, debes usar internet. Lo malo usualmente es que hay que pagar el envío aunque si la compra es grande generalmente el envío es gratis.
+<p>Usar tarjetas de crédito en internet no es tan inseguro como la gente piensa. Trataré en el futuro de buscar más información sobre este tema para apoyar lo que digo. 
+</span>
+
+{% endblock %}
+
+
+{% block rightcontent %}
+{% load monetize %}
+
+{% monetize_slot "header" "django" %}
+				  
+{% endblock %}

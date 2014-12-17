@@ -1,0 +1,61 @@
+﻿{% extends "donate.html" %}
+
+<span lang="es">
+
+{% block content %}<h1>B&uacute;squeda de Empleo</h1>
+<p>La b&uacute;squeda de empleo es el primer trabajo que tendr&aacute;s cuando llegues a 
+Miami. Ahora el empleo est&aacute; escas&iacute;simo y es por eso que ser&aacute; una gran 
+dificultad. </p>
+<p>Aunque hay una gran variedad de sitios Web para buscar trabajo en los Estados 
+Unidos casi todos est&aacute;n en ingl&eacute;s, &uacute;nicamente LatPro sale por omisi&oacute;n en 
+espa&ntilde;ol.</p>
+<p>Los sitios Webs que te pueden ayudar son:</p>
+<table border="1" width="26%" id="table1">
+	<tr>
+		<td width="247"><a href="http://www.simplyhired.com">www.simplyhired.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.careerbuilder.com">
+		www.careerbuilder.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://jobsearch.monster.com/">www.monsters.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://miami.craigslist.org/">
+		www.craiglist.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.CareerJournal.com">
+		www.CareerJournal.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.Indeed.com">www.Indeed.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.Job.com">www.Job.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://hotjobs.yahoo.com/">
+		hotjobs.yahoo.com/</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.computerjobs.com">
+		www.computerjobs.com</a></td>
+	</tr>
+	<tr>
+		<td width="247"><a href="http://www.dice.com/">Dice (IT jobs)</a></td>
+	</tr>
+	<tr>
+		<td width="247">
+		<p align="left"><a href="http://www.latpro.com/">LatPro</a></td>
+	</tr>
+</table>
+</span>
+<p>El mejor consejo para alguien que aún está en Cuba es que aprenda mucho inglés. Obviamente eso te pone delante de muchas personas en el área. Además hay otro detalle importante, el resume. Es vital hace un buen resume(Curriculum Vitae), saber cómo buscar trabajos y cómo hacer una entrevista exitosa. Hay todo un protocolo al respecto y por eso te pongo un enlace donde hay varias informaciones de cómo hacer la búsqueda, cómo prepararse, la entrevista, etc. 
+<a href="http://www.collegegrad.com/jobsearch/Map/"> CollegeGrad.com </a> Hay muchos videos de ellos mismos en <a href="http://www.youtube.com/results?search_query=collegegrad.com+work+interview+&aq=f">youtube</a> así que puedes suar este mágnifico sitio para ir aprendiendo cómo funciona la cosa.</a>
+</p>
+ <p>Por favor si alguien encuentra un sitio web con similar información en español, compartirlo con nosotros para poder ayudar a nuestra gente.
+</p>
+
+{% endblock %}

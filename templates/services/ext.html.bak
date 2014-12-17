@@ -1,0 +1,421 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Prepara Pasaporte</title>
+    <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+    
+    <!-- GC -->
+ 	<!-- LIBS -->
+ 	<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+ 	<!-- ENDLIBS -->
+
+
+    <script type="text/javascript" src="/ext/ext-all.js"></script>
+
+    <!-- Tabs Example Files -->
+    <link rel="stylesheet" type="text/css" href="/ext/examples/tabs/tabs-example.css" />
+    <script type="text/javascript" src="/ext/examples/tabs/tabs-example.js"></script>
+
+    <!-- Common Styles for the examples -->
+    <link rel="stylesheet" type="text/css" href="/ext/examples/shared/examples.css" />
+</head>
+<body>
+<script type="text/javascript" src="/ext/examples/shared/examples.js"></script><!-- EXAMPLES -->
+<script type="text/javascript" >
+	
+	function SetPermisoDeEntrada(){
+		document.pasaporte_form.id_PE1.value = "";
+	 	document.pasaporte_form.id_PE3.value = "";
+	  document.pasaporte_form.id_PE4.value = "";
+	  document.pasaporte_form.id_PE6.value = "";
+	  document.pasaporte_form.id_PE11.value = "";
+	
+		var inputObj = document.getElementById( "id_" + document.pasaporte_form.permiso_de_entrada.value ); 
+	  inputObj.value = "X"; 
+  };
+  
+  
+  function SetTipoDeSolicitud(){
+  	document.pasaporte_form.Renovacion.value = "";
+		document.pasaporte_form.PrimeraVez.value = "";
+		document.pasaporte_form.Prorroga.value = "";
+		var inputObj = document.getElementById( "id_" + document.pasaporte_form.tipo_de_solicitud.value ); 
+		inputObj.value = "X"; 
+  };
+  
+  function SetColorDeOjos(){
+  	document.pasaporte_form.Claros.value = "";
+		document.pasaporte_form.Pardos.value = "";
+	  document.pasaporte_form.Negros.value = ""; 
+	  if (document.pasaporte_form.colorojoscb.value == "C"){
+		  document.pasaporte_form.Claros.value = "X";
+	  }
+	  else if (document.pasaporte_form.colorojoscb.value == "N"){
+		  document.pasaporte_form.Negros.value = "X";
+	  }	  
+	 else {
+		  document.pasaporte_form.Pardos.value = "X";
+	 };
+  };
+	
+	function SetColorDePiel(){
+		document.pasaporte_form.Albina.value = "";
+		document.pasaporte_form.Negra.value = "";
+		document.pasaporte_form.Amarilla.value = "";
+		document.pasaporte_form.Mulata.value = "";
+		document.pasaporte_form.Blanca.value = "";
+		if (document.pasaporte_form.colorpielcb.value == "BL")
+		  document.pasaporte_form.Blanca.value = "X";
+		else if (document.pasaporte_form.colorpielcb.value == "NE")
+		  document.pasaporte_form.Negra.value = "X";
+	  else if (document.pasaporte_form.colorpielcb.value == "MU")
+		  document.pasaporte_form.Mulata.value = "X";
+	  else if (document.pasaporte_form.colorpielcb.value == "AM")
+		  document.pasaporte_form.Amarilla.value = "X";
+		else if (document.pasaporte_form.colorpielcb.value == "AM")
+		  document.pasaporte_form.Albina.value = "X";
+		else
+			document.pasaporte_form.Blanca.value = "X";
+	};
+	
+	function SetColorDeCabellos(){
+		document.pasaporte_form.Negro.value = "";
+		document.pasaporte_form.Canoso.value = "";
+		document.pasaporte_form.Rubio.value = "";
+		document.pasaporte_form.Castanno.value = "";
+		document.pasaporte_form.Otros.value = "";
+		document.pasaporte_form.Rojo.value = "";
+		if (document.pasaporte_form.colorcabellocb.value == "CA")
+			document.pasaporte_form.Canoso.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "NE")
+			document.pasaporte_form.Negro.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "RU")
+			document.pasaporte_form.Rubio.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "CT")
+			document.pasaporte_form.Castanno.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "RO")
+			document.pasaporte_form.Rojo.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "OT")
+			document.pasaporte_form.Otros.value = "X";
+						
+						
+
+	};
+	
+	function SetClasificacionMigratoria(){
+		
+		document.pasaporte_form.PVE.value = "";
+		document.pasaporte_form.PVT.value = "";
+		document.pasaporte_form.AO.value = "";
+		document.pasaporte_form.PSE.value = "";
+		document.pasaporte_form.PRE_PSI.value = "";
+		document.pasaporte_form.Ilegal.value = "";
+		
+		var inputObj = document.getElementById( "id_" + document.pasaporte_form.clasificacionmigratoriacb.value ); 
+		inputObj.value = "X"; 
+	};
+	
+	function GetComboValues(){
+		
+		SetTipoDeSolicitud();
+	  if (document.pasaporte_form.habilitacioncb.value == "Y")
+	 	  document.pasaporte_form.Habilitacion.value = "X"
+	  else
+	 	  document.pasaporte_form.Habilitacion.value = "";
+	 	 
+	 if (document.pasaporte_form.ccvcb.value == "Y")
+	 	  document.pasaporte_form.CCV.value = "X"
+	 else
+	 	  document.pasaporte_form.CCV.value = "";
+	 
+	 if (document.pasaporte_form.sexocb.value == "F"){
+	 	  document.pasaporte_form.Femenino.value = "X";
+	 	  document.pasaporte_form.Masculino.value = "";
+	 	}
+	 else {
+	 	  document.pasaporte_form.Femenino.value = "";
+	 	  document.pasaporte_form.Masculino.value = "X";
+	 	};
+	 
+	  SetPermisoDeEntrada();
+	  
+	  SetColorDeOjos();
+	  SetColorDePiel();
+	  SetColorDeCabellos();
+		SetClasificacionMigratoria();
+	};
+	
+	function validate_form (){
+		var pasaporte_form = document.pasaporte_form;
+		
+		valid = true;
+
+		GetComboValues();
+    //if ( pasaporte_form.PrimerNombre.value == "" ){
+    //    alert ( "Por favor, escriba su primer nombre" );
+   //     valid = false;
+   // }
+    
+    //if ( pasaporte_form.PrimerApellido.value == "" ){
+    //    alert ( "Por favor, escriba su primer apellido" );
+    //    valid = false;
+    //}
+
+		//if ( pasaporte_form.Padre.value == "" ){
+    //    alert ( "Por favor, escriba cual es su padre" );
+    //    valid = false;
+   // }
+    
+    //if ( pasaporte_form.Madre.value == "" ){
+    //    alert ( "Por favor, escriba cual es su madre" );
+    //    valid = false;
+    //}
+    
+    return valid;
+	}
+</script>
+<h1>Completa todos los tabs antes de presionar el botón Procesar</h1>
+    <Form name="pasaporte_form" action="/processpasaporte/" method="post" onsubmit="return validate_form ();">
+		
+    <!-- container for the existing markup tabs -->
+    <div id="tabs1">
+        <div id="markup" class="x-hide-display">
+        	  <table>	
+        	  	<tr><th><label for="id_ViaTramite">Vía del Trámite:</label></th><td><input id="id_ViaTramite" type="text" name="ViaTramite" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="id_ValorTramite">Valor del Trámite:</label></th><td><input id="id_ValorTramite" type="text" name="ValorTramite" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="tipo_de_solicitud">Tipo de Solicitud:</label></th><td><select name="tipo_de_solicitud"> 
+							<option value="PrimeraVez">Primera Vez</option> 
+							<option value="Renovacion">Renovación</option> 
+							<option value="Prorroga">Prórroga</option> 
+						</select></td></tr>
+        	  <tr><td><input TYPE=HIDDEN id="id_Renovacion" type="text" name="Renovacion" maxlength="50" /></td></tr>
+        	  <tr><td><input TYPE=HIDDEN  id="id_Prorroga" type="text" name="Prorroga" maxlength="5" /></td></tr>
+        	  <tr><td><input TYPE=HIDDEN id="id_PrimeraVez" type="text" name="PrimeraVez" maxlength="5" /></td></tr>
+        	  
+        	  <tr><th><label for="habilitacioncb">Habilitación:</label></th><td><select name="habilitacioncb"> 
+							<option value="Y">Sí</option> 
+							<option value="N">No</option> 
+						</select></td></tr>
+        	  <tr><th><td><input id="id_Habilitacion" type="hidden" name="Habilitacion" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="ccvcb">CCV:</label></th><td><select name="ccvcb" value="N"> 
+							<option value="Y">Sí</option> 
+							<option value="N">No</option> 
+						</select></td></tr>
+        	  <tr><td><input id="id_CCV" type="hidden" name="CCV" maxlength="50" /></td></tr>
+        	  
+        	  <tr><th><label for="permiso_de_entrada">Permiso de Entrada:</label></th><td><select name="permiso_de_entrada"> 
+							<option value="PE1">PE-1 (si es un permiso humanitario que debe ser tramitado por los familiares en Cuba)</option> 
+							<option value="PE3">PE-3 (permiso que se le otorga a los cubanos con Permiso de Salida Indefinida)</option> 
+							<option value="PE4">PE-4 (Repatriaciones)</option> 
+							<option value="PE6">PE-6 (permiso por motivos de negocios)</option> 
+							<option value="PE11">PE-11 (permiso para los cubanos que salieron antes del 1ro de enero del 1970 y desean viajar con pasaporte norteamericano)</option> 
+						</select></td></tr>
+						
+        	  <tr><td><input id="id_PE1" TYPE=HIDDEN type="text" name="PE1" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE3" TYPE=HIDDEN type="text" name="PE3" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE4" TYPE=HIDDEN  type="text" name="PE4" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE6" TYPE=HIDDEN type="text" name="PE6" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE11" TYPE=HIDDEN type="text" name="PE11" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_FechaSolicitudDia">Fecha Solicitud Día:</label></th><td><input id="id_FechaSolicitudDia" type="text" name="FechaSolicitudDia" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechaSolicitudMes">Fecha Solicitud Mes:</label></th><td><input id="id_FechaSolicitudMes" type="text" name="FechaSolicitudMes" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechaSolicitudAnno">Fecha Solicitud Año:</label></th><td><input id="id_FechaSolicitudAnno" type="text" name="FechaSolicitudAnno" maxlength="50" /></td></tr>
+						
+						<tr><th><label for="id_NoPasaporte">No de Pasaporte:</label></th><td><input id="id_NoPasaporte" type="text" name="NoPasaporte" maxlength="50" /></td></tr>
+					</table>	
+
+           
+        </div>
+        <div id="markup" class="x-hide-display">
+        	<table>	
+        		<tr><th><label for="id_PrimerApellido">Primer Apellido:</label></th><td><input id="id_PrimerApellido" type="text" name="PrimerApellido" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_SegundoApellido">Segundo Apellido:</label></th><td><input id="id_SegundoApellido" type="text" name="SegundoApellido" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_PrimerNombre">Primer Nombre:</label></th><td><input id="id_PrimerNombre" type="text" name="PrimerNombre" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_SegundoNombre">Segundo Nombre:</label></th><td><input id="id_SegundoNombre" type="text" name="SegundoNombre" maxlength="50" /></td></tr>
+        		
+        		
+            <tr><th><label for="id_Padre">Hijo de Padre:</label></th><td><input id="id_Padre" type="text" name="Padre" maxlength="50" /></td></tr>
+            <tr><th><label for="id_Madre">Hido de Madre:</label></th><td><input id="id_Madre" type="text" name="Madre" maxlength="50" /></td></tr>
+						<tr><th><label for="id_Estatura">Estatura(centímetros):</label></th><td><input id="id_Estatura" type="text" name="Estatura" maxlength="50" /></td></tr>						
+
+						<tr><th><label for="sexocb">Sexo:</label></th><td><select name="sexocb"> 
+							<option value="F">Femenino</option> 
+							<option value="M">Masculino</option> 
+						</select></td></tr>
+						<tr><td><input id="id_Femenino" type="hidden" name="Femenino" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Masculino" type="hidden" name="Masculino" maxlength="50" /></td></tr>
+
+						<tr><th><label for="colorojoscb">Color de los Ojos:</label></th><td><select name="colorojoscb"> 
+							<option value="C">Claros</option> 
+							<option value="N">Negros</option> 
+							<option value="P">Pardos</option> 
+						</select></td></tr>	
+						<tr><td><input id="id_Negros" type="hidden" name="Negros" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Pardos" type="hidden" name="Pardos" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Claros" type="hidden" name="Claros" maxlength="50" /></td></tr>
+						
+						
+						<tr><th><label for="colorpielcb">Color de la Piel:</label></th><td><select name="colorpielcb"> 
+							<option value="BL">Blanca</option> 
+							<option value="NE">Negra</option> 
+							<option value="MU">Mulata</option> 
+							<option value="AM">Amarilla</option> 
+							<option value="AL">Albina</option> 
+						</select></td></tr>	
+						<tr><td><input id="id_Albina" type="hidden" name="Albina" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Negra" type="hidden" name="Negra" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Amarilla" type="hidden" name="Amarilla" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Mulata" type="hidden" name="Mulata" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Blanca" type="hidden" name="Blanca" maxlength="50" /></td></tr>
+					
+					  <tr><th><label for="colorcabellocb">Color de los Cabellos:</label></th><td><select name="colorcabellocb"> 
+							<option value="CA">Canoso</option> 
+							<option value="NE">Negro</option> 
+							<option value="RU">Rubio</option> 
+							<option value="CT">Castaño</option> 
+							<option value="RO">Rojo</option> 
+							<option value="OT">Otros</option> 
+						</select></td></tr>	
+						<tr><td><input id="id_Negro" type="hidden" name="Negro" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Canoso" type="hidden" name="Canoso" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Rubio" type="hidden" name="Rubio" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Castanno" type="hidden" name="Castanno" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Otros" type="hidden" name="Otros" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Rojo" type="hidden" name="Rojo" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_CaracteristicasEspeciales">Características Especiales:</label></th><td><input id="id_CaracteristicasEspeciales" type="text" name="CaracteristicasEspeciales" maxlength="50" /></td></tr>
+				</table>	
+        </div>
+        <div id="markup" class="x-hide-display">
+        	  <table>	
+        	  <tr><th><label for="id_PaisDeResidencia">País de Residencia:</label></th><td><input id="id_PaisDeResidencia" type="text" name="PaisDeResidencia" maxlength="50" /></td></tr>
+        	  <tr><th><label for="id_Estado">Estado:</label></th><td><input id="id_Estado" type="text" name="Estado" maxlength="50" /></td></tr>
+        	  <tr><th><label for="clasificacionmigratoriacb">Clasificación Migratoria:</label></th><td><select name="clasificacionmigratoriacb"> 
+							<option value="PVE">Permiso de Viaje al Extranjero</option> 
+							<option value="PSE">Permiso de Salida al Extranjero</option> 
+							<option value="PVT">Permiso de Viaje Temporal</option> 
+							<option value="AO">Asuntos Oficiales</option> 
+							<option value="PRE_PSI">Permiso de Residencia en el Extranjero/Permiso de Salida Indefinida</option> 
+							<option value="Ilegal">ILEGAL</option> 
+						</select></td></tr>	
+						<tr><td><input id="id_PVE" type="hidden" name="PVE" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PSE" type="hidden" name="PSE" maxlength="50" /></td></tr>
+						<tr><td><input id="id_AO" type="hidden" name="AO" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PVT" type="hidden" name="PVT" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PRE_PSI" type="hidden" name="PRE_PSI" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Ilegal" type="hidden" name="Ilegal" maxlength="50" /></td></tr>
+
+					<tr><th><label for="id_FechadeSalidaDia">Fecha de Salida Día:</label></th><td><input id="id_FechadeSalidaDia" type="text" name="FechadeSalidaDia" maxlength="50" /></td></tr>
+					<tr><th><label for="id_FechadeSalidaMes">Fecha de Salida Mes:</label></th><td><input id="id_FechadeSalidaMes" type="text" name="FechadeSalidaMes" maxlength="50" /></td></tr>
+					<tr><th><label for="id_FechadeSalidaAnno">Fecha de Salida Año:</label></th><td><input id="id_FechadeSalidaAnno" type="text" name="FechadeSalidaAnno" maxlength="50" /></td></tr>
+										
+					</table>	
+				</div>
+				<div id="markup" class="x-hide-display">
+        	  <table>	
+						<tr><th><label for="id_LugarNacimientoPais">Lugar Nacimiento País:</label></th><td><input id="id_LugarNacimientoPais" type="text" name="LugarNacimientoPais" maxlength="50" /></td></tr>
+						<tr><th><label for="id_LugarNacimientoProvincia">Lugar Nacimiento Provincia:</label></th><td><input id="id_LugarNacimientoProvincia" type="text" name="LugarNacimientoProvincia" maxlength="50" /></td></tr>
+        	  <tr><th><label for="id_LugarNacimientoCiudad">Lugar Nacimiento Ciudad:</label></th><td><input id="id_LugarNacimientoCiudad" type="text" name="LugarNacimientoCiudad" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_FechadeNacimientoDia">Fecha de Nacimiento Día:</label></th><td><input id="id_FechadeNacimientoDia" type="text" name="FechadeNacimientoDia" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechadeNacimientoMes">Fecha de Nacimiento Mes:</label></th><td><input id="id_FechadeNacimientoMes" type="text" name="FechadeNacimientoMes" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechadeNacimientoAnno">Fecha de Nacimiento Año:</label></th><td><input id="id_FechadeNacimientoAnno" type="text" name="FechadeNacimientoAnno" maxlength="50" /></td></tr>
+        	  
+					</table>
+				</div>	
+					<div id="markup" class="x-hide-display">
+        	  <table>	
+        	  	<tr><th><label for="id_LugarActual">Lugar:</label></th><td><input id="id_LugarActual" type="text" name="LugarActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_PaisActual">País:</label></th><td><input id="id_PaisActual" type="text" name="PaisActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_DireccionActual">Dirección:</label></th><td><input id="id_DireccionActual" type="text" name="DireccionActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_ZipActual">Zip Code:</label></th><td><input id="id_ZipActual" type="text" name="ZipActual" maxlength="50" /></td></tr>
+
+							<tr><th><label for="id_TelefonoActual">Teléfono:</label></th><td><input id="id_TelefonoActual" type="text" name="TelefonoActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_EmailActual">E-mail:</label></th><td><input id="id_EmailActual" type="text" name="EmailActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_FaxActual">Fax:</label></th><td><input id="id_FaxActual" type="text" name="FaxActual" maxlength="50" /></td></tr>
+							
+
+
+					</table>	
+				</div>
+					<div id="markup" class="x-hide-display">
+        	  <table>	
+        	  
+
+<tr><th><label for="id_TrabajoDireccion">Trabajo Direccion:</label></th><td><input id="id_TrabajoDireccion" type="text" name="TrabajoDireccion" maxlength="50" /></td></tr>
+
+<tr><th><label for="id_TrabajoTelefono">Trabajo Telefono:</label></th><td><input id="id_TrabajoTelefono" type="text" name="TrabajoTelefono" maxlength="50" /></td></tr>
+<tr><th><label for="id_Ocupacion2">Ocupacion2:</label></th><td><input id="id_Ocupacion2" type="text" name="Ocupacion2" maxlength="50" /></td></tr>
+
+
+<tr><th><label for="id_CentroTrabajo">Centro Trabajo:</label></th><td><input id="id_CentroTrabajo" type="text" name="CentroTrabajo" maxlength="50" /></td></tr>
+
+
+
+
+<tr><th><label for="id_Profesion">Profesion:</label></th><td><input id="id_Profesion" type="text" name="Profesion" maxlength="50" /></td></tr>
+<tr><th><label for="id_TrabajoEmail">Trabajo Email:</label></th><td><input id="id_TrabajoEmail" type="text" name="TrabajoEmail" maxlength="50" /></td></tr>
+<tr><th><label for="id_TrabajoPais">Trabajo Pais:</label></th><td><input id="id_TrabajoPais" type="text" name="TrabajoPais" maxlength="50" /></td></tr>
+<tr><th><label for="id_Profesion2">Profesion2:</label></th><td><input id="id_Profesion2" type="text" name="Profesion2" maxlength="50" /></td></tr>
+<tr><th><label for="id_Ocupacion">Ocupacion:</label></th><td><input id="id_Ocupacion" type="text" name="Ocupacion" maxlength="50" /></td></tr>
+<tr><th><label for="id_TrabajoFax">Trabajo Fax:</label></th><td><input id="id_TrabajoFax" type="text" name="TrabajoFax" maxlength="50" /></td></tr>
+<tr><th><label for="id_TrabajoZip">Trabajo Zip:</label></th><td><input id="id_TrabajoZip" type="text" name="TrabajoZip" maxlength="50" /></td></tr>
+<tr><th><label for="id_TrabajoProvincia">TrabajoProvincia:</label></th><td><input id="id_TrabajoProvincia" type="text" name="TrabajoProvincia" maxlength="50" /></td></tr>
+<tr><th><label for="id_NivelCultural">Nivel Cultural:</label></th><td><input id="id_NivelCultural" type="text" name="NivelCultural" maxlength="50" /></td></tr>
+
+
+
+
+					</table>	
+				</div>
+				<div id="markup" class="x-hide-display">
+        	  <table>	
+        	  	<tr><th><label for="id_NombreReferenciaenCuba">Nombre de Referencia en Cuba:</label></th><td><input id="id_NombreReferenciaenCuba" type="text" name="NombreReferenciaenCuba" maxlength="50" /></td></tr>
+        	  	
+        	  	<tr><th><label for="id_DireccionRef1">Dirección Referencia 1:</label></th><td><input id="id_DireccionRef1" type="text" name="DireccionRef1" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="id_DireccionRef2">Dirección Referencia 2:</label></th><td><input id="id_DireccionRef2" type="text" name="DireccionRef2" maxlength="50" /></td></tr>
+        	  </table >
+        	  <table width ="800">
+        	  	<tr><td width="80%"><label >Lugar de Residencia en Cuba(últimos dos años):</label></td>
+        	  		<td width="10%"><label >Desde</label></td>
+        	  		<td width="10%"><label >Hasta</label></td></tr>
+
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion1Cuba" type="text" name="Direccion1Cuba" maxlength="150" value =""/></td>
+									<td width="10%"><input size="10" id="id_Desde1" type="text" name="Desde1" maxlength="10" /></td>
+									<td width="10%"><input size="10" id="id_Hasta1" type="text" name="Hasta1" maxlength="10" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion2Cuba" type="text" name="Direccion2Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde2" type="text" name="Desde2" maxlength="10" /></td>
+									<td width="10%"><input size="10" id="id_Hasta2" type="text" name="Hasta2" maxlength="10" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion3Cuba" type="text" name="Direccion3Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde3" type="text" name="Desde3" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta3" type="text" name="Hasta3" maxlength="50" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion4Cuba" type="text" name="Direccion4Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde4" type="text" name="Desde4" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta4" type="text" name="Hasta4" maxlength="50" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion5Cuba" type="text" name="Direccion5Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde5" type="text" name="Desde5" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta5" type="text" name="Hasta5" maxlength="50" /></td>
+								</tr>
+						
+
+								
+					</table>	
+				</div>
+    </div>
+   <tr>  </tr>
+   <tr> <input type="submit" value="Procesar"></input> </tr>
+ 
+</form>
+
+</body>
+</html> 

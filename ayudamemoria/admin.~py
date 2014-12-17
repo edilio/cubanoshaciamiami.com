@@ -1,0 +1,5 @@
+from cubanoshaciamiami.ayudamemoria.models import MemoryPhrase_Answer
+
+from django.contrib import admin
+
+admin.site.register(MemoryPhrase_Answer)

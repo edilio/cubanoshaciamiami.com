@@ -1,0 +1,1 @@
+path=%path%;c:\python25

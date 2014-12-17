@@ -1,0 +1,1024 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="Cubanos, Cuba, emigracion, miami, trabajo">
+	  <meta name="keywords" content="Pasaporte, embajada, consulado, Cubanos, Cuba, emigracion, miami, bombo, reclamacion">
+    <title>Prepara Pasaporte</title>
+    <link rel="stylesheet" type="text/css" href="/ext/resources/css/ext-all.css" />
+
+    <!-- GC -->
+ 	<!-- LIBS -->
+ 	<script type="text/javascript" src="/ext/adapter/ext/ext-base.js"></script>
+ 	<!-- ENDLIBS -->
+
+
+    <script type="text/javascript" src="/ext/ext-all.js"></script>
+
+    <!-- Tabs Example Files -->
+    <link rel="stylesheet" type="text/css" href="/ext/examples/tabs/tabs-example.css" />
+    <script type="text/javascript" src="/ext/pkgs/state.js"></script>
+    <script type="text/javascript" src="/ext/examples/tabs/tabs-example.js"></script>
+
+
+    <!-- Common Styles for the examples -->
+    <link rel="stylesheet" type="text/css" href="/ext/examples/shared/examples.css" />
+</head>
+<body onload=Clear_Form()>
+<script type="text/javascript" src="/ext/examples/shared/examples.js"></script><!-- EXAMPLES -->
+<script type="text/javascript" >
+
+
+	function SetPermisoDeEntrada(){
+		document.pasaporte_form.id_PE1.value = "";
+	 	document.pasaporte_form.id_PE3.value = "";
+	  document.pasaporte_form.id_PE4.value = "";
+	  document.pasaporte_form.id_PE6.value = "";
+	  document.pasaporte_form.id_PE11.value = "";
+
+	  if (document.pasaporte_form.permiso_de_entrada.value != ""){
+			var inputObj = document.getElementById( "id_" + document.pasaporte_form.permiso_de_entrada.value );
+	  	inputObj.value = "X";
+		};
+  };
+
+
+  function SetTipoDeSolicitud(){
+  	document.pasaporte_form.Renovacion.value = "";
+		document.pasaporte_form.PrimeraVez.value = "";
+		document.pasaporte_form.Prorroga.value = "";
+		var inputObj = document.getElementById( "id_" + document.pasaporte_form.tipo_de_solicitud.value );
+		inputObj.value = "X";
+  };
+
+  function SetColorDeOjos(){
+  	document.pasaporte_form.Claros.value = "";
+		document.pasaporte_form.Pardos.value = "";
+	  document.pasaporte_form.Negros.value = "";
+	  if (document.pasaporte_form.colorojoscb.value == "C"){
+		  document.pasaporte_form.Claros.value = "X";
+	  }
+	  else if (document.pasaporte_form.colorojoscb.value == "N"){
+		  document.pasaporte_form.Negros.value = "X";
+	  }
+	 else {
+		  document.pasaporte_form.Pardos.value = "X";
+	 };
+  };
+
+	function SetColorDePiel(){
+		document.pasaporte_form.Albina.value = "";
+		document.pasaporte_form.Negra.value = "";
+		document.pasaporte_form.Amarilla.value = "";
+		document.pasaporte_form.Mulata.value = "";
+		document.pasaporte_form.Blanca.value = "";
+		if (document.pasaporte_form.colorpielcb.value == "BL")
+		  document.pasaporte_form.Blanca.value = "X";
+		else if (document.pasaporte_form.colorpielcb.value == "NE")
+		  document.pasaporte_form.Negra.value = "X";
+	  else if (document.pasaporte_form.colorpielcb.value == "MU")
+		  document.pasaporte_form.Mulata.value = "X";
+	  else if (document.pasaporte_form.colorpielcb.value == "AM")
+		  document.pasaporte_form.Amarilla.value = "X";
+		else if (document.pasaporte_form.colorpielcb.value == "AM")
+		  document.pasaporte_form.Albina.value = "X";
+		else
+			document.pasaporte_form.Blanca.value = "X";
+	};
+
+	function SetColorDeCabellos(){
+		document.pasaporte_form.Negro.value = "";
+		document.pasaporte_form.Canoso.value = "";
+		document.pasaporte_form.Rubio.value = "";
+		document.pasaporte_form.Castanno.value = "";
+		document.pasaporte_form.Otros.value = "";
+		document.pasaporte_form.Rojo.value = "";
+		if (document.pasaporte_form.colorcabellocb.value == "CA")
+			document.pasaporte_form.Canoso.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "NE")
+			document.pasaporte_form.Negro.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "RU")
+			document.pasaporte_form.Rubio.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "CT")
+			document.pasaporte_form.Castanno.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "RO")
+			document.pasaporte_form.Rojo.value = "X";
+		else if (document.pasaporte_form.colorcabellocb.value == "OT")
+			document.pasaporte_form.Otros.value = "X";
+
+
+
+	};
+
+	function SetClasificacionMigratoria(){
+
+		document.pasaporte_form.PVE.value = "";
+		document.pasaporte_form.PVT.value = "";
+		document.pasaporte_form.AO.value = "";
+		document.pasaporte_form.PSE.value = "";
+		document.pasaporte_form.PRE_PSI.value = "";
+		document.pasaporte_form.Ilegal.value = "";
+
+		var inputObj = document.getElementById( "id_" + document.pasaporte_form.clasificacionmigratoriacb.value );
+		inputObj.value = "X";
+	};
+
+	function GetComboValues(){
+
+		SetTipoDeSolicitud();
+	  if (document.pasaporte_form.habilitacioncb.value == "Y")
+	 	  document.pasaporte_form.Habilitacion.value = "X"
+	  else
+	 	  document.pasaporte_form.Habilitacion.value = "";
+
+	 if (document.pasaporte_form.ccvcb.value == "Y")
+	 	  document.pasaporte_form.CCV.value = "X"
+	 else
+	 	  document.pasaporte_form.CCV.value = "";
+
+	 if (document.pasaporte_form.sexocb.value == "F"){
+	 	  document.pasaporte_form.Femenino.value = "X";
+	 	  document.pasaporte_form.Masculino.value = "";
+	 	}
+	 else {
+	 	  document.pasaporte_form.Femenino.value = "";
+	 	  document.pasaporte_form.Masculino.value = "X";
+	 	};
+
+		SetPermisoDeEntrada();
+	  SetColorDeOjos();
+	  SetColorDePiel();
+	  SetColorDeCabellos();
+	  SetClasificacionMigratoria();
+
+	};
+
+	function validate_form (){
+		var detected_errors = "";
+		var pasaporte_form = document.pasaporte_form;
+
+		pasaporte_form.pdfFileName.value = pasaporte_form.PrimerNombre.value + pasaporte_form.PrimerApellido.value + pasaporte_form.NoPasaporte.value;
+
+		GetComboValues();
+
+		if ( pasaporte_form.PrimerNombre.value == "" ){
+        detected_errors += "escriba su primer nombre\n" ;
+    }
+
+    if ( pasaporte_form.PrimerApellido.value == "" ){
+        detected_errors += "escriba su primer apellido\n" ;
+    }
+
+    if ( pasaporte_form.SegundoApellido.value == "" ){
+        detected_errors += "escriba su segundo apellido\n" ;
+    }
+
+		if ( pasaporte_form.Padre.value == "" ){
+        detected_errors += "escriba cual es su padre\n";
+    }
+
+    if ( pasaporte_form.Madre.value == "" ){
+        detected_errors += "escriba cual es su madre\n";
+    }
+
+    if ( pasaporte_form.Estatura.value == "" )
+        detected_errors += "escriba la estatura\n";
+
+    if ( pasaporte_form.FechaSolicitudDia.value == "" )
+        detected_errors += "escriba el día en que está haciendo el trámite\n";
+    if ( pasaporte_form.FechaSolicitudMes.value == "" )
+        detected_errors += "escriba el mes en que está haciendo el trámite\n";
+    if ( pasaporte_form.FechaSolicitudAnno.value == "" )
+        detected_errors += "escriba el año en que está haciendo el trámite\n";
+
+    if (( pasaporte_form.NoPasaporte.value == "" ) && (pasaporte_form.Prorroga.value == "X"))
+        detected_errors += "escriba el número de pasaporte si está haciendo una prórroga\n";
+
+    //verifica residencia actual
+    if ( pasaporte_form.LugarActual.value == "" )
+        detected_errors += "escriba el Lugar donde vive Actualmente \n";
+    if ( pasaporte_form.PaisActual.value == "" )
+        detected_errors += "escriba el País donde vive Actualmente\n";
+
+    if ( pasaporte_form.DireccionActual.value == "" )
+        detected_errors += "escriba el Dirección donde vive Actualmente\n";
+
+    if ( pasaporte_form.ZipActual.value == "" )
+        detected_errors += "escriba el Zip code de la Dirección donde vive Actualmente\n";
+
+    if ( pasaporte_form.TelefonoActual.value == "" )
+        detected_errors += "escriba cúal es número de teléfono Actualmente\n";
+
+    if ( pasaporte_form.EmailActual.value == "" )
+        detected_errors += "escriba cúal es dirección de correco electrónico\n";
+
+    if ( pasaporte_form.FaxActual.value == "" )
+        detected_errors += "escriba cúal es su número de fax\n";
+
+    if ( pasaporte_form.LugarNacimientoProvincia.value == "" )
+        detected_errors += "escriba la provincia donde nació\n";
+
+    if ( pasaporte_form.LugarNacimientoCiudad.value == "" )
+        detected_errors += "escriba la ciudad donde nació\n";
+
+    if ( pasaporte_form.FechadeNacimientoDia.value == "" )
+        detected_errors += "escriba el día de su nacimiento\n";
+
+    if ( pasaporte_form.FechadeNacimientoMes.value == "" )
+        detected_errors += "escriba el mes de su nacimiento\n";
+
+    if ( pasaporte_form.FechadeNacimientoAnno.value == "" )
+        detected_errors += "escriba el año de su nacimiento\n";
+
+
+    if (detected_errors != "")
+      alert("Por favor, " + detected_errors);
+
+    return detected_errors == "";
+	}
+</script>
+<h1>Completa todos los subtítulos antes de presionar el botón Procesar</h1>
+    <table>
+    <tr>
+    <td>
+    <Form name="pasaporte_form" action="/processpasaporte/" method="post" onsubmit="return validate_form ();">
+
+    <!-- container for the existing markup tabs -->
+    <div id="tabs1">
+        <div id="solicitud" class="x-hide-display">
+        	  <table>
+        	  	<tr><th><label for="id_ViaTramite">Vía del Trámite:</label></th><td><input id="id_ViaTramite" type="text" name="ViaTramite" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="id_ValorTramite">Valor del Trámite:</label></th><td><input id="id_ValorTramite" type="text" name="ValorTramite" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="tipo_de_solicitud">Tipo de Solicitud:</label></th><td><select name="tipo_de_solicitud">
+							<option value="PrimeraVez">Primera Vez</option>
+							<option value="Renovacion">Renovación</option>
+							<option value="Prorroga">Prórroga</option>
+						</select></td></tr>
+        	  <tr><td><input TYPE=HIDDEN id="id_Renovacion" type="text" name="Renovacion" maxlength="50" /></td></tr>
+        	  <tr><td><input TYPE=HIDDEN  id="id_Prorroga" type="text" name="Prorroga" maxlength="5" /></td></tr>
+        	  <tr><td><input TYPE=HIDDEN id="id_PrimeraVez" type="text" name="PrimeraVez" maxlength="5" /></td></tr>
+
+        	  <tr><th><label for="habilitacioncb">Habilitación:</label></th><td><select name="habilitacioncb">
+							<option value="Y">Sí</option>
+							<option value="N">No</option>
+						</select></td></tr>
+        	  <tr><th><td><input id="id_Habilitacion" type="hidden" name="Habilitacion" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="ccvcb">CCV:</label></th><td><select name="ccvcb" value="N">
+							<option value="N">No</option>
+							<option value="Y">Sí</option>
+
+						</select></td></tr>
+        	  <tr><td><input id="id_CCV" type="hidden" name="CCV" maxlength="50" /></td></tr>
+
+        	  <tr><th><label for="permiso_de_entrada">Permiso de Entrada:</label></th><td><select name="permiso_de_entrada">
+        	  	<option value=""></option>
+							<option value="PE1">PE-1 (si es un permiso humanitario que debe ser tramitado por los familiares en Cuba)</option>
+							<option value="PE3">PE-3 (permiso que se le otorga a los cubanos con Permiso de Salida Indefinida)</option>
+							<option value="PE4">PE-4 (Repatriaciones)</option>
+							<option value="PE6">PE-6 (permiso por motivos de negocios)</option>
+							<option value="PE11">PE-11 (permiso para los cubanos que salieron antes del 1ro de enero del 1970 y desean viajar con pasaporte norteamericano)</option>
+						</select></td></tr>
+
+        	  <tr><td><input id="id_PE1" TYPE=HIDDEN type="text" name="PE1" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE3" TYPE=HIDDEN type="text" name="PE3" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE4" TYPE=HIDDEN  type="text" name="PE4" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE6" TYPE=HIDDEN type="text" name="PE6" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PE11" TYPE=HIDDEN type="text" name="PE11" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_FechaSolicitudDia">Fecha Solicitud Día:</label></th><td><input id="id_FechaSolicitudDia" type="text" name="FechaSolicitudDia" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechaSolicitudMes">Fecha Solicitud Mes:</label></th><td><input id="id_FechaSolicitudMes" type="text" name="FechaSolicitudMes" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechaSolicitudAnno">Fecha Solicitud Año:</label></th><td><input id="id_FechaSolicitudAnno" type="text" name="FechaSolicitudAnno" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_NoPasaporte">No de Pasaporte:</label></th><td><input id="id_NoPasaporte" type="text" name="NoPasaporte" maxlength="50" /></td></tr>
+						<input type="hidden" name="pdfFileName"  />
+					</table>
+
+
+        </div>
+        <div id="generales" class="x-hide-display">
+        	<table>
+        		<tr><th><label for="id_PrimerNombre">Primer Nombre:</label></th><td><input id="id_PrimerNombre" type="text" name="PrimerNombre" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_SegundoNombre">Segundo Nombre:</label></th><td><input id="id_SegundoNombre" type="text" name="SegundoNombre" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_PrimerApellido">Primer Apellido:</label></th><td><input id="id_PrimerApellido" type="text" name="PrimerApellido" maxlength="50" /></td></tr>
+        		<tr><th><label for="id_SegundoApellido">Segundo Apellido:</label></th><td><input id="id_SegundoApellido" type="text" name="SegundoApellido" maxlength="50" /></td></tr>
+
+
+            <tr><th><label for="id_Padre">Hijo de Padre:</label></th><td><input id="id_Padre" type="text" name="Padre" maxlength="50" /></td></tr>
+            <tr><th><label for="id_Madre">Hijo de Madre:</label></th><td><input id="id_Madre" type="text" name="Madre" maxlength="50" /></td></tr>
+						<tr><th><label for="id_Estatura">Estatura(centímetros):</label></th><td><input id="id_Estatura" type="text" name="Estatura" maxlength="50" /></td></tr>
+
+						<tr><th><label for="sexocb">Sexo:</label></th><td><select name="sexocb">
+							<option value="F">Femenino</option>
+							<option value="M">Masculino</option>
+						</select></td></tr>
+						<tr><td><input id="id_Femenino" type="hidden" name="Femenino" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Masculino" type="hidden" name="Masculino" maxlength="50" /></td></tr>
+
+						<tr><th><label for="colorojoscb">Color de los Ojos:</label></th><td><select name="colorojoscb">
+							<option value="C">Claros</option>
+							<option value="N">Negros</option>
+							<option value="P">Pardos</option>
+						</select></td></tr>
+						<tr><td><input id="id_Negros" type="hidden" name="Negros" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Pardos" type="hidden" name="Pardos" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Claros" type="hidden" name="Claros" maxlength="50" /></td></tr>
+
+
+						<tr><th><label for="colorpielcb">Color de la Piel:</label></th><td><select name="colorpielcb">
+							<option value="BL">Blanca</option>
+							<option value="NE">Negra</option>
+							<option value="MU">Mulata</option>
+							<option value="AM">Amarilla</option>
+							<option value="AL">Albina</option>
+						</select></td></tr>
+						<tr><td><input id="id_Albina" type="hidden" name="Albina" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Negra" type="hidden" name="Negra" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Amarilla" type="hidden" name="Amarilla" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Mulata" type="hidden" name="Mulata" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Blanca" type="hidden" name="Blanca" maxlength="50" /></td></tr>
+
+					  <tr><th><label for="colorcabellocb">Color de los Cabellos:</label></th><td><select name="colorcabellocb">
+							<option value="CA">Canoso</option>
+							<option value="NE">Negro</option>
+							<option value="RU">Rubio</option>
+							<option value="CT">Castaño</option>
+							<option value="RO">Rojo</option>
+							<option value="OT">Otros</option>
+						</select></td></tr>
+						<tr><td><input id="id_Negro" type="hidden" name="Negro" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Canoso" type="hidden" name="Canoso" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Rubio" type="hidden" name="Rubio" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Castanno" type="hidden" name="Castanno" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Otros" type="hidden" name="Otros" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Rojo" type="hidden" name="Rojo" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_CaracteristicasEspeciales">Características Especiales:</label></th><td><input id="id_CaracteristicasEspeciales" type="text" name="CaracteristicasEspeciales" maxlength="50" /></td></tr>
+				</table>
+        </div>
+        <div id="migratorio" class="x-hide-display">
+        	  <table>
+        	  	<tr><th><label for="id_PaisDeResidencia">País de Residencia:</label></th><td><select name="PaisDeResidencia" style="width:auto;clear:none;" onchange="Fill_States();">
+								<option value=""></option>
+							<option value="Afghanistan">Afghanistan</option>
+							<option value="Albania">Albania</option>
+							<option value="Algeria">Algeria</option>
+							<option value="American Samoa">American Samoa</option>
+							<option value="Angola">Angola</option>
+							<option value="Anguilla">Anguilla</option>
+							<option value="Antartica">Antartica</option>
+							<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+							<option value="Argentina">Argentina</option>
+							<option value="Armenia">Armenia</option>
+							<option value="Aruba">Aruba</option>
+							<option value="Ashmore and Cartier Island">Ashmore and Cartier Island</option>
+							<option value="Australia">Australia</option>
+							<option value="Austria">Austria</option>
+							<option value="Azerbaijan">Azerbaijan</option>
+							<option value="Bahamas">Bahamas</option>
+							<option value="Bahrain">Bahrain</option>
+							<option value="Bangladesh">Bangladesh</option>
+							<option value="Barbados">Barbados</option>
+							<option value="Belarus">Belarus</option>
+							<option value="Belgium">Belgium</option>
+							<option value="Belize">Belize</option>
+							<option value="Benin">Benin</option>
+							<option value="Bermuda">Bermuda</option>
+							<option value="Bhutan">Bhutan</option>
+							<option value="Bolivia">Bolivia</option>
+							<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+							<option value="Botswana">Botswana</option>
+							<option value="Brazil">Brazil</option>
+							<option value="British Virgin Islands">British Virgin Islands</option>
+							<option value="Brunei">Brunei</option>
+							<option value="Bulgaria">Bulgaria</option>
+							<option value="Burkina Faso">Burkina Faso</option>
+							<option value="Burma">Burma</option>
+							<option value="Burundi">Burundi</option>
+							<option value="Cambodia">Cambodia</option>
+							<option value="Cameroon">Cameroon</option>
+							<option value="Canada">Canada</option>
+							<option value="Cape Verde">Cape Verde</option>
+							<option value="Cayman Islands">Cayman Islands</option>
+							<option value="Central African Republic">Central African Republic</option>
+							<option value="Chad">Chad</option>
+							<option value="Chile">Chile</option>
+							<option value="China">China</option>
+							<option value="Christmas Island">Christmas Island</option>
+							<option value="Clipperton Island">Clipperton Island</option>
+							<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+							<option value="Colombia">Colombia</option>
+							<option value="Comoros">Comoros</option>
+							<option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+							<option value="Congo, Republic of the">Congo, Republic of the</option>
+							<option value="Cook Islands">Cook Islands</option>
+							<option value="Costa Rica">Costa Rica</option>
+							<option value="Cote d'Ivoire">Cote d'Ivoire</option>
+							<option value="Croatia">Croatia</option>
+							<option value="Cuba">Cuba</option>
+							<option value="Cyprus">Cyprus</option>
+							<option value="Czeck Republic">Czeck Republic</option>
+							<option value="Denmark">Denmark</option>
+							<option value="Djibouti">Djibouti</option>
+							<option value="Dominica">Dominica</option>
+							<option value="Dominican Republic">Dominican Republic</option>
+							<option value="Ecuador">Ecuador</option>
+							<option value="Egypt">Egypt</option>
+							<option value="El Salvador">El Salvador</option>
+							<option value="Equatorial Guinea">Equatorial Guinea</option>
+							<option value="Eritrea">Eritrea</option>
+							<option value="Estonia">Estonia</option>
+							<option value="Ethiopia">Ethiopia</option>
+							<option value="Europa Island">Europa Island</option>
+							<option value="Falkland Islands (Islas Malvinas)">Falkland Islands (Islas Malvinas)</option>
+							<option value="Faroe Islands">Faroe Islands</option>
+							<option value="Fiji">Fiji</option>
+							<option value="Finland">Finland</option>
+							<option value="France">France</option>
+							<option value="French Guiana">French Guiana</option>
+							<option value="French Polynesia">French Polynesia</option>
+							<option value="French Southern and Antarctic Lands">French Southern and Antarctic Lands</option>
+							<option value="Gabon">Gabon</option>
+							<option value="Gambia, The">Gambia, The</option>
+							<option value="Gaza Strip">Gaza Strip</option>
+							<option value="Georgia">Georgia</option>
+							<option value="Germany">Germany</option>
+							<option value="Ghana">Ghana</option>
+							<option value="Gibraltar">Gibraltar</option>
+							<option value="Glorioso Islands">Glorioso Islands</option>
+							<option value="Greece">Greece</option>
+							<option value="Greenland">Greenland</option>
+							<option value="Grenada">Grenada</option>
+							<option value="Guadeloupe">Guadeloupe</option>
+							<option value="Guam">Guam</option>
+							<option value="Guatemala">Guatemala</option>
+							<option value="Guernsey">Guernsey</option>
+							<option value="Guinea">Guinea</option>
+							<option value="Guinea-Bissau">Guinea-Bissau</option>
+							<option value="Guyana">Guyana</option>
+							<option value="Haiti">Haiti</option>
+							<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+							<option value="Holy See (Vatican City)">Holy See (Vatican City)</option>
+							<option value="Honduras">Honduras</option>
+							<option value="Hong Kong">Hong Kong</option>
+							<option value="Howland Island">Howland Island</option>
+							<option value="Hungary">Hungary</option>
+							<option value="Iceland">Iceland</option>
+							<option value="India">India</option>
+							<option value="Indonesia">Indonesia</option>
+							<option value="Iran">Iran</option>
+							<option value="Iraq">Iraq</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Ireland, Northern">Ireland, Northern</option>
+							<option value="Israel">Israel</option>
+							<option value="Italy">Italy</option>
+							<option value="Jamaica">Jamaica</option>
+							<option value="Jan Mayen">Jan Mayen</option>
+							<option value="Japan">Japan</option>
+							<option value="Jarvis Island">Jarvis Island</option>
+							<option value="Jersey">Jersey</option>
+							<option value="Johnston Atoll">Johnston Atoll</option>
+							<option value="Jordan">Jordan</option>
+							<option value="Juan de Nova Island">Juan de Nova Island</option>
+							<option value="Kazakhstan">Kazakhstan</option>
+							<option value="Kenya">Kenya</option>
+							<option value="Kiribati">Kiribati</option>
+							<option value="Korea, North">Korea, North</option>
+							<option value="Korea, South">Korea, South</option>
+							<option value="Kuwait">Kuwait</option>
+							<option value="Kyrgyzstan">Kyrgyzstan</option>
+							<option value="Laos">Laos</option>
+							<option value="Latvia">Latvia</option>
+							<option value="Lebanon">Lebanon</option>
+							<option value="Lesotho">Lesotho</option>
+							<option value="Liberia">Liberia</option>
+							<option value="Libya">Libya</option>
+							<option value="Liechtenstein">Liechtenstein</option>
+							<option value="Lithuania">Lithuania</option>
+							<option value="Luxembourg">Luxembourg</option>
+							<option value="Macau">Macau</option>
+							<option value="Macedonia, Former Yugoslav Republic of">Macedonia, Former Yugoslav Republic of</option>
+							<option value="Madagascar">Madagascar</option>
+							<option value="Malawi">Malawi</option>
+							<option value="Malaysia">Malaysia</option>
+							<option value="Maldives">Maldives</option>
+							<option value="Mali">Mali</option>
+							<option value="Malta">Malta</option>
+							<option value="Man, Isle of">Man, Isle of</option>
+							<option value="Marshall Islands">Marshall Islands</option>
+							<option value="Martinique">Martinique</option>
+							<option value="Mauritania">Mauritania</option>
+							<option value="Mauritius">Mauritius</option>
+							<option value="Mayotte">Mayotte</option>
+							<option value="Mexico">Mexico</option>
+							<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+							<option value="Midway Islands">Midway Islands</option>
+							<option value="Moldova">Moldova</option>
+							<option value="Monaco">Monaco</option>
+							<option value="Mongolia">Mongolia</option>
+							<option value="Montserrat">Montserrat</option>
+							<option value="Morocco">Morocco</option>
+							<option value="Mozambique">Mozambique</option>
+							<option value="Namibia">Namibia</option>
+							<option value="Nauru">Nauru</option>
+							<option value="Nepal">Nepal</option>
+							<option value="Netherlands">Netherlands</option>
+							<option value="Netherlands Antilles">Netherlands Antilles</option>
+							<option value="New Caledonia">New Caledonia</option>
+							<option value="New Zealand">New Zealand</option>
+							<option value="Nicaragua">Nicaragua</option>
+							<option value="Niger">Niger</option>
+							<option value="Nigeria">Nigeria</option>
+							<option value="Niue">Niue</option>
+							<option value="Norfolk Island">Norfolk Island</option>
+							<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+							<option value="Norway">Norway</option>
+							<option value="Oman">Oman</option>
+							<option value="Pakistan">Pakistan</option>
+							<option value="Palau">Palau</option>
+							<option value="Panama">Panama</option>
+							<option value="Papua New Guinea">Papua New Guinea</option>
+							<option value="Paraguay">Paraguay</option>
+							<option value="Peru">Peru</option>
+							<option value="Philippines">Philippines</option>
+							<option value="Pitcaim Islands">Pitcaim Islands</option>
+							<option value="Poland">Poland</option>
+							<option value="Portugal">Portugal</option>
+							<option value="Puerto Rico">Puerto Rico</option>
+							<option value="Qatar">Qatar</option>
+							<option value="Reunion">Reunion</option>
+							<option value="Romainia">Romainia</option>
+							<option value="Russia">Russia</option>
+							<option value="Rwanda">Rwanda</option>
+							<option value="Saint Helena">Saint Helena</option>
+							<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+							<option value="Saint Lucia">Saint Lucia</option>
+							<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+							<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+							<option value="Samoa">Samoa</option>
+							<option value="San Marino">San Marino</option>
+							<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+							<option value="Saudi Arabia">Saudi Arabia</option>
+							<option value="Scotland">Scotland</option>
+							<option value="Senegal">Senegal</option>
+							<option value="Seychelles">Seychelles</option>
+							<option value="Sierra Leone">Sierra Leone</option>
+							<option value="Singapore">Singapore</option>
+							<option value="Slovakia">Slovakia</option>
+							<option value="Slovenia">Slovenia</option>
+							<option value="Solomon Islands">Solomon Islands</option>
+							<option value="Somalia">Somalia</option>
+							<option value="South Africa">South Africa</option>
+							<option value="South Georgia and South Sandwich Islands">South Georgia and South Sandwich Islands</option>
+							<option value="España">España</option>
+							<option value="Spratly Islands">Spratly Islands</option>
+							<option value="Sri Lanka">Sri Lanka</option>
+							<option value="Sudan">Sudan</option>
+							<option value="Suriname">Suriname</option>
+							<option value="Svalbard">Svalbard</option>
+							<option value="Swaziland">Swaziland</option>
+							<option value="Sweden">Sweden</option>
+							<option value="Switzerland">Switzerland</option>
+							<option value="Syria">Syria</option>
+							<option value="Taiwan">Taiwan</option>
+							<option value="Tajikistan">Tajikistan</option>
+							<option value="Tanzania">Tanzania</option>
+							<option value="Thailand">Thailand</option>
+							<option value="Tobago">Tobago</option>
+							<option value="Toga">Toga</option>
+							<option value="Tokelau">Tokelau</option>
+							<option value="Tonga">Tonga</option>
+							<option value="Trinidad">Trinidad</option>
+							<option value="Tunisia">Tunisia</option>
+							<option value="Turkey">Turkey</option>
+							<option value="Turkmenistan">Turkmenistan</option>
+							<option value="Tuvalu">Tuvalu</option>
+							<option value="Uganda">Uganda</option>
+							<option value="Ukraine">Ukraine</option>
+							<option value="United Arab Emirates">United Arab Emirates</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="Uruguay">Uruguay</option>
+							<option value="USA">USA</option>
+							<option value="Uzbekistan">Uzbekistan</option>
+							<option value="Vanuatu">Vanuatu</option>
+							<option value="Venezuela">Venezuela</option>
+							<option value="Vietnam">Vietnam</option>
+							<option value="Virgin Islands">Virgin Islands</option>
+							<option value="Wales">Wales</option>
+							<option value="Wallis and Futuna">Wallis and Futuna</option>
+							<option value="West Bank">West Bank</option>
+							<option value="Western Sahara">Western Sahara</option>
+							<option value="Yemen">Yemen</option>
+							<option value="Yugoslavia">Yugoslavia</option>
+							<option value="Zambia">Zambia</option>
+							<option value="Zimbabwe">Zimbabwe</option>
+								</select></td>
+
+
+							</tr>
+							<tr>
+ 								<td class="td100">Estado/Provincia</td>
+								<td><select name="Estado" style="width:auto;" >
+								<option selected="selected">12345678901234567890</option>
+								<option>temp</option></select></td></tr>
+
+        	  <tr><th><label for="clasificacionmigratoriacb">Clasificación Migratoria:</label></th><td><select name="clasificacionmigratoriacb">
+							<option value="PVE">Permiso de Viaje al Extranjero</option>
+							<option value="PSE">Permiso de Salida al Extranjero</option>
+							<option value="PVT">Permiso de Viaje Temporal</option>
+							<option value="AO">Asuntos Oficiales</option>
+							<option value="PRE_PSI">Permiso de Residencia en el Extranjero/Permiso de Salida Indefinida</option>
+							<option value="Ilegal">ILEGAL</option>
+						</select></td></tr>
+						<tr><td><input id="id_PVE" type="hidden" name="PVE" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PSE" type="hidden" name="PSE" maxlength="50" /></td></tr>
+						<tr><td><input id="id_AO" type="hidden" name="AO" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PVT" type="hidden" name="PVT" maxlength="50" /></td></tr>
+						<tr><td><input id="id_PRE_PSI" type="hidden" name="PRE_PSI" maxlength="50" /></td></tr>
+						<tr><td><input id="id_Ilegal" type="hidden" name="Ilegal" maxlength="50" /></td></tr>
+
+					<tr><th><label for="id_FechadeSalidaDia">Fecha de Salida Día:</label></th><td><input id="id_FechadeSalidaDia" type="text" name="FechadeSalidaDia" maxlength="50" /></td></tr>
+					<tr><th><label for="id_FechadeSalidaMes">Fecha de Salida Mes:</label></th><td><input id="id_FechadeSalidaMes" type="text" name="FechadeSalidaMes" maxlength="50" /></td></tr>
+					<tr><th><label for="id_FechadeSalidaAnno">Fecha de Salida Año:</label></th><td><input id="id_FechadeSalidaAnno" type="text" name="FechadeSalidaAnno" maxlength="50" /></td></tr>
+
+					</table>
+				</div>
+				<div id="nacimiento" class="x-hide-display">
+        	  <table>
+						<tr><th><label for="id_LugarNacimientoPais">País de Nacimiento :</label></th><td>
+							<select id="id_LugarNacimientoPais" name="LugarNacimientoPais" style="width:auto;clear:none;" >
+								<option value=""></option>
+							<option value="Afghanistan">Afghanistan</option>
+							<option value="Albania">Albania</option>
+							<option value="Algeria">Algeria</option>
+							<option value="American Samoa">American Samoa</option>
+							<option value="Angola">Angola</option>
+							<option value="Anguilla">Anguilla</option>
+							<option value="Antartica">Antartica</option>
+							<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+							<option value="Argentina">Argentina</option>
+							<option value="Armenia">Armenia</option>
+							<option value="Aruba">Aruba</option>
+							<option value="Ashmore and Cartier Island">Ashmore and Cartier Island</option>
+							<option value="Australia">Australia</option>
+							<option value="Austria">Austria</option>
+							<option value="Azerbaijan">Azerbaijan</option>
+							<option value="Bahamas">Bahamas</option>
+							<option value="Bahrain">Bahrain</option>
+							<option value="Bangladesh">Bangladesh</option>
+							<option value="Barbados">Barbados</option>
+							<option value="Belarus">Belarus</option>
+							<option value="Belgium">Belgium</option>
+							<option value="Belize">Belize</option>
+							<option value="Benin">Benin</option>
+							<option value="Bermuda">Bermuda</option>
+							<option value="Bhutan">Bhutan</option>
+							<option value="Bolivia">Bolivia</option>
+							<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+							<option value="Botswana">Botswana</option>
+							<option value="Brazil">Brazil</option>
+							<option value="British Virgin Islands">British Virgin Islands</option>
+							<option value="Brunei">Brunei</option>
+							<option value="Bulgaria">Bulgaria</option>
+							<option value="Burkina Faso">Burkina Faso</option>
+							<option value="Burma">Burma</option>
+							<option value="Burundi">Burundi</option>
+							<option value="Cambodia">Cambodia</option>
+							<option value="Cameroon">Cameroon</option>
+							<option value="Canada">Canada</option>
+							<option value="Cape Verde">Cape Verde</option>
+							<option value="Cayman Islands">Cayman Islands</option>
+							<option value="Central African Republic">Central African Republic</option>
+							<option value="Chad">Chad</option>
+							<option value="Chile">Chile</option>
+							<option value="China">China</option>
+							<option value="Christmas Island">Christmas Island</option>
+							<option value="Clipperton Island">Clipperton Island</option>
+							<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+							<option value="Colombia">Colombia</option>
+							<option value="Comoros">Comoros</option>
+							<option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+							<option value="Congo, Republic of the">Congo, Republic of the</option>
+							<option value="Cook Islands">Cook Islands</option>
+							<option value="Costa Rica">Costa Rica</option>
+							<option value="Cote d'Ivoire">Cote d'Ivoire</option>
+							<option value="Croatia">Croatia</option>
+							<option value="Cuba">Cuba</option>
+							<option value="Cyprus">Cyprus</option>
+							<option value="Czeck Republic">Czeck Republic</option>
+							<option value="Denmark">Denmark</option>
+							<option value="Djibouti">Djibouti</option>
+							<option value="Dominica">Dominica</option>
+							<option value="Dominican Republic">Dominican Republic</option>
+							<option value="Ecuador">Ecuador</option>
+							<option value="Egypt">Egypt</option>
+							<option value="El Salvador">El Salvador</option>
+							<option value="Equatorial Guinea">Equatorial Guinea</option>
+							<option value="Eritrea">Eritrea</option>
+							<option value="Estonia">Estonia</option>
+							<option value="Ethiopia">Ethiopia</option>
+							<option value="Europa Island">Europa Island</option>
+							<option value="Falkland Islands (Islas Malvinas)">Falkland Islands (Islas Malvinas)</option>
+							<option value="Faroe Islands">Faroe Islands</option>
+							<option value="Fiji">Fiji</option>
+							<option value="Finland">Finland</option>
+							<option value="France">France</option>
+							<option value="French Guiana">French Guiana</option>
+							<option value="French Polynesia">French Polynesia</option>
+							<option value="French Southern and Antarctic Lands">French Southern and Antarctic Lands</option>
+							<option value="Gabon">Gabon</option>
+							<option value="Gambia, The">Gambia, The</option>
+							<option value="Gaza Strip">Gaza Strip</option>
+							<option value="Georgia">Georgia</option>
+							<option value="Germany">Germany</option>
+							<option value="Ghana">Ghana</option>
+							<option value="Gibraltar">Gibraltar</option>
+							<option value="Glorioso Islands">Glorioso Islands</option>
+							<option value="Greece">Greece</option>
+							<option value="Greenland">Greenland</option>
+							<option value="Grenada">Grenada</option>
+							<option value="Guadeloupe">Guadeloupe</option>
+							<option value="Guam">Guam</option>
+							<option value="Guatemala">Guatemala</option>
+							<option value="Guernsey">Guernsey</option>
+							<option value="Guinea">Guinea</option>
+							<option value="Guinea-Bissau">Guinea-Bissau</option>
+							<option value="Guyana">Guyana</option>
+							<option value="Haiti">Haiti</option>
+							<option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+							<option value="Holy See (Vatican City)">Holy See (Vatican City)</option>
+							<option value="Honduras">Honduras</option>
+							<option value="Hong Kong">Hong Kong</option>
+							<option value="Howland Island">Howland Island</option>
+							<option value="Hungary">Hungary</option>
+							<option value="Iceland">Iceland</option>
+							<option value="India">India</option>
+							<option value="Indonesia">Indonesia</option>
+							<option value="Iran">Iran</option>
+							<option value="Iraq">Iraq</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Ireland, Northern">Ireland, Northern</option>
+							<option value="Israel">Israel</option>
+							<option value="Italy">Italy</option>
+							<option value="Jamaica">Jamaica</option>
+							<option value="Jan Mayen">Jan Mayen</option>
+							<option value="Japan">Japan</option>
+							<option value="Jarvis Island">Jarvis Island</option>
+							<option value="Jersey">Jersey</option>
+							<option value="Johnston Atoll">Johnston Atoll</option>
+							<option value="Jordan">Jordan</option>
+							<option value="Juan de Nova Island">Juan de Nova Island</option>
+							<option value="Kazakhstan">Kazakhstan</option>
+							<option value="Kenya">Kenya</option>
+							<option value="Kiribati">Kiribati</option>
+							<option value="Korea, North">Korea, North</option>
+							<option value="Korea, South">Korea, South</option>
+							<option value="Kuwait">Kuwait</option>
+							<option value="Kyrgyzstan">Kyrgyzstan</option>
+							<option value="Laos">Laos</option>
+							<option value="Latvia">Latvia</option>
+							<option value="Lebanon">Lebanon</option>
+							<option value="Lesotho">Lesotho</option>
+							<option value="Liberia">Liberia</option>
+							<option value="Libya">Libya</option>
+							<option value="Liechtenstein">Liechtenstein</option>
+							<option value="Lithuania">Lithuania</option>
+							<option value="Luxembourg">Luxembourg</option>
+							<option value="Macau">Macau</option>
+							<option value="Macedonia, Former Yugoslav Republic of">Macedonia, Former Yugoslav Republic of</option>
+							<option value="Madagascar">Madagascar</option>
+							<option value="Malawi">Malawi</option>
+							<option value="Malaysia">Malaysia</option>
+							<option value="Maldives">Maldives</option>
+							<option value="Mali">Mali</option>
+							<option value="Malta">Malta</option>
+							<option value="Man, Isle of">Man, Isle of</option>
+							<option value="Marshall Islands">Marshall Islands</option>
+							<option value="Martinique">Martinique</option>
+							<option value="Mauritania">Mauritania</option>
+							<option value="Mauritius">Mauritius</option>
+							<option value="Mayotte">Mayotte</option>
+							<option value="Mexico">Mexico</option>
+							<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+							<option value="Midway Islands">Midway Islands</option>
+							<option value="Moldova">Moldova</option>
+							<option value="Monaco">Monaco</option>
+							<option value="Mongolia">Mongolia</option>
+							<option value="Montserrat">Montserrat</option>
+							<option value="Morocco">Morocco</option>
+							<option value="Mozambique">Mozambique</option>
+							<option value="Namibia">Namibia</option>
+							<option value="Nauru">Nauru</option>
+							<option value="Nepal">Nepal</option>
+							<option value="Netherlands">Netherlands</option>
+							<option value="Netherlands Antilles">Netherlands Antilles</option>
+							<option value="New Caledonia">New Caledonia</option>
+							<option value="New Zealand">New Zealand</option>
+							<option value="Nicaragua">Nicaragua</option>
+							<option value="Niger">Niger</option>
+							<option value="Nigeria">Nigeria</option>
+							<option value="Niue">Niue</option>
+							<option value="Norfolk Island">Norfolk Island</option>
+							<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+							<option value="Norway">Norway</option>
+							<option value="Oman">Oman</option>
+							<option value="Pakistan">Pakistan</option>
+							<option value="Palau">Palau</option>
+							<option value="Panama">Panama</option>
+							<option value="Papua New Guinea">Papua New Guinea</option>
+							<option value="Paraguay">Paraguay</option>
+							<option value="Peru">Peru</option>
+							<option value="Philippines">Philippines</option>
+							<option value="Pitcaim Islands">Pitcaim Islands</option>
+							<option value="Poland">Poland</option>
+							<option value="Portugal">Portugal</option>
+							<option value="Puerto Rico">Puerto Rico</option>
+							<option value="Qatar">Qatar</option>
+							<option value="Reunion">Reunion</option>
+							<option value="Romainia">Romainia</option>
+							<option value="Russia">Russia</option>
+							<option value="Rwanda">Rwanda</option>
+							<option value="Saint Helena">Saint Helena</option>
+							<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+							<option value="Saint Lucia">Saint Lucia</option>
+							<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+							<option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+							<option value="Samoa">Samoa</option>
+							<option value="San Marino">San Marino</option>
+							<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+							<option value="Saudi Arabia">Saudi Arabia</option>
+							<option value="Scotland">Scotland</option>
+							<option value="Senegal">Senegal</option>
+							<option value="Seychelles">Seychelles</option>
+							<option value="Sierra Leone">Sierra Leone</option>
+							<option value="Singapore">Singapore</option>
+							<option value="Slovakia">Slovakia</option>
+							<option value="Slovenia">Slovenia</option>
+							<option value="Solomon Islands">Solomon Islands</option>
+							<option value="Somalia">Somalia</option>
+							<option value="South Africa">South Africa</option>
+							<option value="South Georgia and South Sandwich Islands">South Georgia and South Sandwich Islands</option>
+							<option value="España">España</option>
+							<option value="Spratly Islands">Spratly Islands</option>
+							<option value="Sri Lanka">Sri Lanka</option>
+							<option value="Sudan">Sudan</option>
+							<option value="Suriname">Suriname</option>
+							<option value="Svalbard">Svalbard</option>
+							<option value="Swaziland">Swaziland</option>
+							<option value="Sweden">Sweden</option>
+							<option value="Switzerland">Switzerland</option>
+							<option value="Syria">Syria</option>
+							<option value="Taiwan">Taiwan</option>
+							<option value="Tajikistan">Tajikistan</option>
+							<option value="Tanzania">Tanzania</option>
+							<option value="Thailand">Thailand</option>
+							<option value="Tobago">Tobago</option>
+							<option value="Toga">Toga</option>
+							<option value="Tokelau">Tokelau</option>
+							<option value="Tonga">Tonga</option>
+							<option value="Trinidad">Trinidad</option>
+							<option value="Tunisia">Tunisia</option>
+							<option value="Turkey">Turkey</option>
+							<option value="Turkmenistan">Turkmenistan</option>
+							<option value="Tuvalu">Tuvalu</option>
+							<option value="Uganda">Uganda</option>
+							<option value="Ukraine">Ukraine</option>
+							<option value="United Arab Emirates">United Arab Emirates</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="Uruguay">Uruguay</option>
+							<option value="USA">USA</option>
+							<option value="Uzbekistan">Uzbekistan</option>
+							<option value="Vanuatu">Vanuatu</option>
+							<option value="Venezuela">Venezuela</option>
+							<option value="Vietnam">Vietnam</option>
+							<option value="Virgin Islands">Virgin Islands</option>
+							<option value="Wales">Wales</option>
+							<option value="Wallis and Futuna">Wallis and Futuna</option>
+							<option value="West Bank">West Bank</option>
+							<option value="Western Sahara">Western Sahara</option>
+							<option value="Yemen">Yemen</option>
+							<option value="Yugoslavia">Yugoslavia</option>
+							<option value="Zambia">Zambia</option>
+							<option value="Zimbabwe">Zimbabwe</option>
+								</select></td></tr>
+						<tr><th><label for="id_LugarNacimientoProvincia">Provincia de Nacimiento :</label></th><td><input id="id_LugarNacimientoProvincia" type="text" name="LugarNacimientoProvincia" maxlength="50" /></td></tr>
+        	  <tr><th><label for="id_LugarNacimientoCiudad">Ciudad de Nacimiento:</label></th><td><input id="id_LugarNacimientoCiudad" type="text" name="LugarNacimientoCiudad" maxlength="50" /></td></tr>
+
+						<tr><th><label for="id_FechadeNacimientoDia">Día de Nacimiento:</label></th><td><input id="id_FechadeNacimientoDia" type="text" name="FechadeNacimientoDia" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechadeNacimientoMes">Mes de Nacimiento:</label></th><td><input id="id_FechadeNacimientoMes" type="text" name="FechadeNacimientoMes" maxlength="50" /></td></tr>
+						<tr><th><label for="id_FechadeNacimientoAnno">Año de Nacimiento:</label></th><td><input id="id_FechadeNacimientoAnno" type="text" name="FechadeNacimientoAnno" maxlength="50" /></td></tr>
+
+					</table>
+				</div>
+					<div id="residencia" class="x-hide-display">
+        	  <table>
+        	  	<tr><th><label for="id_LugarActual">Lugar:</label></th><td><input id="id_LugarActual" type="text" name="LugarActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_PaisActual">País:</label></th><td><input id="id_PaisActual" type="text" name="PaisActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_DireccionActual">Dirección:</label></th><td><input id="id_DireccionActual" type="text" name="DireccionActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_ZipActual">Zip Code:</label></th><td><input id="id_ZipActual" type="text" name="ZipActual" maxlength="50" /></td></tr>
+
+							<tr><th><label for="id_TelefonoActual">Teléfono:</label></th><td><input id="id_TelefonoActual" type="text" name="TelefonoActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_EmailActual">E-mail:</label></th><td><input id="id_EmailActual" type="text" name="EmailActual" maxlength="50" /></td></tr>
+							<tr><th><label for="id_FaxActual">Fax:</label></th><td><input id="id_FaxActual" type="text" name="FaxActual" maxlength="50" /></td></tr>
+
+
+
+					</table>
+				</div>
+					<div id="trabajo" class="x-hide-display">
+        	  <table>
+
+<tr><th><label for="id_CentroTrabajo">Centro Trabajo o Estudio:</label></th><td><input id="id_CentroTrabajo" type="text" name="CentroTrabajo" maxlength="50" /></td></tr>
+								<tr><th><label for="id_Profesion">Profesion:</label></th><td><input id="id_Profesion" type="text" name="Profesion" maxlength="50" /></td></tr>
+								<tr><th><label for="id_Ocupacion">Ocupacion:</label></th><td><input id="id_Ocupacion" type="text" name="Ocupacion" maxlength="50" /></td></tr>
+
+								<tr><th><label for="id_TrabajoDireccion"> Direccion(calle, Ave., Nro, Entre Calles):</label></th><td><input id="id_TrabajoDireccion" type="text" name="TrabajoDireccion" maxlength="50" /></td></tr>
+								<tr><th><label for="id_TrabajoZip">Trabajo Zip:</label></th><td><input id="id_TrabajoZip" type="text" name="TrabajoZip" maxlength="50" /></td></tr>
+								<tr><th><label for="id_TrabajoProvincia">Provincia-Estado-Región:</label></th><td><input id="id_TrabajoProvincia" type="text" name="TrabajoProvincia" maxlength="50" /></td></tr>
+								<tr><th><label for="id_TrabajoPais">Trabajo Pais:</label></th><td><input id="id_TrabajoPais" type="text" name="TrabajoPais" maxlength="50" /></td></tr>
+
+								<tr><th><label for="id_TrabajoTelefono">Telefono:</label></th><td><input id="id_TrabajoTelefono" type="text" name="TrabajoTelefono" maxlength="50" /></td></tr>
+								<tr><th><label for="id_TrabajoFax">Fax:</label></th><td><input id="id_TrabajoFax" type="text" name="TrabajoFax" maxlength="50" /></td></tr>
+
+								<tr><th><label for="id_TrabajoEmail">E-mail:</label></th><td><input id="id_TrabajoEmail" type="text" name="TrabajoEmail" maxlength="50" /></td></tr>
+
+
+
+								<tr><th><label for="id_NivelCultural">Nivel Cultural:</label></th><td><input id="id_NivelCultural" type="text" name="NivelCultural" maxlength="50" /></td></tr>
+								<tr><th><label for="id_Profesion2">Profesión u Oficio:</label></th><td><input id="id_Profesion2" type="text" name="Profesion2" maxlength="50" /></td></tr>
+								<tr><th><label for="id_Ocupacion2">Ocupación:</label></th><td><input id="id_Ocupacion2" type="text" name="Ocupacion2" maxlength="50" /></td></tr>
+
+
+					</table>
+				</div>
+				<div id="referencia" class="x-hide-display">
+        	  <table>
+        	  	<tr><th><label for="id_NombreReferenciaenCuba">Nombre de Referencia en Cuba:</label></th><td><input id="id_NombreReferenciaenCuba" type="text" name="NombreReferenciaenCuba" maxlength="50" /></td></tr>
+
+        	  	<tr><th><label for="id_DireccionRef1">Dirección Referencia 1:</label></th><td><input id="id_DireccionRef1" type="text" name="DireccionRef1" maxlength="50" /></td></tr>
+        	  	<tr><th><label for="id_DireccionRef2">Dirección Referencia 2:</label></th><td><input id="id_DireccionRef2" type="text" name="DireccionRef2" maxlength="50" /></td></tr>
+        	  </table >
+        	  <table width ="800">
+        	  	<tr><td width="80%"><label >Lugar de Residencia en Cuba(últimos dos años):</label></td>
+        	  		<td width="10%"><label >Desde</label></td>
+        	  		<td width="10%"><label >Hasta</label></td></tr>
+
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion1Cuba" type="text" name="Direccion1Cuba" maxlength="150" value =""/></td>
+									<td width="10%"><input size="10" id="id_Desde1" type="text" name="Desde1" maxlength="10" /></td>
+									<td width="10%"><input size="10" id="id_Hasta1" type="text" name="Hasta1" maxlength="10" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion2Cuba" type="text" name="Direccion2Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde2" type="text" name="Desde2" maxlength="10" /></td>
+									<td width="10%"><input size="10" id="id_Hasta2" type="text" name="Hasta2" maxlength="10" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion3Cuba" type="text" name="Direccion3Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde3" type="text" name="Desde3" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta3" type="text" name="Hasta3" maxlength="50" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion4Cuba" type="text" name="Direccion4Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde4" type="text" name="Desde4" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta4" type="text" name="Hasta4" maxlength="50" /></td>
+								</tr>
+								<tr>
+									<td width="80%"><input size="100" id="id_Direccion5Cuba" type="text" name="Direccion5Cuba" maxlength="150" /></td>
+									<td width="10%"><input size="10" id="id_Desde5" type="text" name="Desde5" maxlength="50" /></td>
+									<td width="10%"><input size="10" id="id_Hasta5" type="text" name="Hasta5" maxlength="50" /></td>
+								</tr>
+
+
+
+					</table>
+				</div>
+    </div>
+   <tr>  </tr>
+   <tr> <input type="submit" value="Procesar"></input> </tr>
+
+</form>
+</td>
+<td>
+</td>
+</tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="5" width="620">
+			<tr>
+				<td width="616" valign="top" align="left" bgcolor="#ffffff">
+					<script type="text/javascript"><!--
+					google_ad_client = "pub-3343684011388928";
+					/* 728x90, created 5/11/10 */
+					google_ad_slot = "6897848163";
+					google_ad_width = 728;
+					google_ad_height = 90;
+					//-->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+				</td>
+			</tr>
+		</table>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿{% extends "www.speedycomputers.us.htm" %}
+{% load i18n %}
+
+{% block more_head %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+   <script language ="javascript">
+	function Salario(horas_regulares,taxes_horas_regulares,rate_horas_regulares){
+	    return (horas_regulares * rate_horas_regulares)-(horas_regulares * rate_horas_regulares * taxes_horas_regulares);
+    }
+	function Desglose(horas_regulares,taxes_horas_regulares,rate_horas_regulares){
+	    var bruto = horas_regulares * rate_horas_regulares;
+	    var container = document.getElementById("Bruto"); 
+	    container.innerHTML = bruto;
+	    
+	    var taxes = (horas_regulares * rate_horas_regulares * taxes_horas_regulares);
+	    containeri = document.getElementById("Impuestos"); 
+	    containeri.innerHTML = taxes;
+	    
+	    
+	    var neto = bruto - taxes;
+	    containern = document.getElementById("Neto"); 
+	    containern.innerHTML = neto;
+	    
+    	return neto;
+    }
+	function Taxes(){
+	    var hr = document.getElementById("hr").value;
+	    var thr = document.getElementById("thr").value;
+	    var rhr = document.getElementById("rhr").value;
+		Desglose(hr,thr,rhr);
+	}
+
+    </script>
+</meta>
+{% endblock %}
+
+{% block content %}
+<h1>Sobre los Impuestos</h1>
+<p>En USA se pagan varios tipos de impuestos. Se paga Impuesto sobre la renta(Income Tax) e impuestos sobre la propiedad. Hay muchas cosas que decir sobre los impuestos pero no diré mucho por ahora.</p>
+<p>Las compañías que te hacen los impuestos son muchas. Una que se promociona mucho es H&R Block. No les creas es una compañía que adiestra a la gente para la temporara de impuestos. Por supuesto hay quien sabe pero también hay muchos que no saben nada. Si acabas de llegar ahora no te recoiendo que uses TurboTax, sitio en internet donde puesdes hacer tu propia declaración de taxes desde la comodidad de la casa. Lo malo del asunto es que cómo no dominas bien los trucos casi seguro vas a terminaar pagando mucho más. </p>
+
+Aquí en <a href= "http://en.wikipedia.org/wiki/Rate_schedule_(federal_income_tax)" > wipipedia </a> encontrará explicaciones sobre los impuestos.</br></br>
+<label>Horas que te explotaron   </label>   <input type="text" style ="text-align:right" id="hr" name="hr" value="40"></input><br />
+<label>Cuanto te pagaron por hora</label>   <input type="text" style ="text-align:right" id="rhr" name="rhr" value="10"></input><br />
+<label>Impuesto por hora         </label>   <input type="text" style ="text-align:right" id="thr" name="thr" value ="0.12"></input><br />
+<br/><br/>
+<button onclick="Taxes();">Taxes</button><br /></br>
+<label>Salario Bruto</label>
+<div id="Bruto"></div><br />
+<label>Impuestos</label>
+<div id="Impuestos"></div><br />
+<label>Salario Neto</label>
+<div id="Neto"></div><br />
+				
+				
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<iframe src="http://rcm.amazon.com/e/cm?t=cubanoshaciam-20&o=1&p=8&l=as1&asins=9562913813&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<p>{% endblock %}</p>

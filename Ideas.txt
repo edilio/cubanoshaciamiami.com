@@ -1,0 +1,13 @@
+Ideas
+
+Crear una app en iphone para la memoria(similar al que hice en cuba para aprender inglés)
+Crear una app en iphone que someramente calcule cuánto te cobrarían en los distintos programas(PH, Voucher, PBS8)
+
+Crear app para crear Guías, y que a la vez nos haga pruebas aleatorias.
+		Los usuarios pueden crear, guardar, importar y exportar esas guias.
+		Crear un tipo de mercado donde las personas puedan poner en ventas sus guías(yo cobraría el 30% de esas ventas)
+		Cobraría además 0.99 por el iphone app
+		Debe estar disponible en inglés y español
+		
+Crear un web site que permita crear una application(PH, S8) y luego le envíe ese pdf a una direción de correo electrónico, se debe poder escoger entre las distintas Housing authorities
+		
