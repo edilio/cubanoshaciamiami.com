@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Cubanos Hacia Miami, emigracion de cuba a miami...</title>
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="Cubanos, Cuba, emigracion, miami, trabajo">
+	<meta name="keywords" content="Cubanos, Cuba, emigracion, miami, bombo, reclamacion">
+
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+
+    <meta charset="iso-8859-1">
+	<META HTTP-EQUIV="Content-Type"    CONTENT="text/html; charset=ISO-8859-1">
+{% block more_head %}
+{% endblock %}
+</head>
+
+<body >
+<div id="home" data-role="page" data-theme="b">
+<center>
+<table width="760" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="140" height="32" rowspan="2"><img src="{% static 'img/top_left.jpg' %}" width="140" height="88"></td>
+    <td width="460" height="32">
+    <img height="80" src="{% static 'img/cubaflag.jpeg' %}">
+    <img height="80" src="{% static 'img/bici.jpeg' %}">
+    <img height="80" src="{% static 'img/usaflag.jpeg' %}">
+	</td>
+
+  </tr>
+  <tr>
+      <td colspan="3"><img src="{% static 'img/top_content_bar.jpg' %}" width="620" height="1"></td>
+  </tr>
+  <tr>
+      <td width="140" align="center" valign="top" background="{% static 'img/striped_background.jpg' %}">
+
+
+           <table><tr><td background="{% static 'img/spacer.gif' %}"><!-- Start buttons section -->
+	  	    {% for m in Menus %}
+            <a id="{{m.name}}" href="{{ m.href }}" title="{{m.name}}">{{m.name}}</a><br/>
+
+            {% endfor %}
+
+            </ul>
+
+	  	<img name="spacer" src="{% static 'img/spacer.gif' %}" width=1 height=1 border=0>
+	  	</td>
+	  	</tr>
+	  	</table>
+
+      </td>
+    <td colspan="3">
+		<table border="0" cellspacing="0" cellpadding="5" width="620">
+			<tr>
+				<td width="616" valign="top" align="left" bgcolor="#ffffff">
+					<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-3343684011388928";
+					/* Second Test */
+					google_ad_slot = "6328276688";
+					google_ad_width = 728;
+					google_ad_height = 90;
+					//-->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+					{% block content %}{% endblock %}</FONT>
+
+<!-- End content section -->
+				</td>
+				<td width="30" >
+					{% block rightcontent %}{% endblock %}
+
+				</td>
+			</tr>
+		</table>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="{% static 'img/left_btm.jpg' %}" width="600" height="19"></td>
+    <td width="66"><img src="{% static 'img/mid_btm.jpg' %}" width="66" height="19"></td>
+    <td width="265" background="{% static 'img/mid_btm.jpg' %}"
+        style="background-image:{% static 'img/motif01.jpg' %}"
+        valign="top">
+    </td>
+  </tr>
+</table>
+
+</center>
+</div>
+</body>
+</html>

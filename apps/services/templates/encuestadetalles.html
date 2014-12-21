@@ -1,0 +1,28 @@
+{% extends "real_base.html" %}
+
+{% block content %}
+<h1>{{ poll.question }}</h1>
+<ul>
+
+{% for choice in choices %}
+	<table>
+	<tr>
+	<td>
+	<a href="/encuestas/{{poll.id}}/opcion/{{choice.id}}/up"><img src="http://www.reddit.com/static/aupmod.gif"></a></div></br>
+
+	<a href="/encuestas/{{poll.id}}/opcion/{{choice.id}}/down"><img src="http://www.reddit.com/static/adownmod.gif"></a></div>
+	</td>
+	<td><strong>{{ choice.choice}}</strong>  Votos: {{choice.votes}}</td>
+	</tr>
+	</table>
+	
+	
+{% endfor %}
+</ul>
+	<form action = "/encuestas/{{poll.id}}/agregaropcion/" method="post">
+	<label>Otra Opci&oacute;n:&nbsp;</label>
+	<input name="otherchoice" type="text"  value=""> 
+	<input type="submit" value="Agregar"></input> 
+
+	</form>
+&nbsp;{% endblock %}

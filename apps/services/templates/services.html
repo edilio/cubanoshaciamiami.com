@@ -1,0 +1,10 @@
+{% extends "real_base.html" %}
+<span lang="es">
+
+{% block content %}
+	{% for s in Services_list %}
+   		<a href="{{ s.href }}" title="{{s.name}}"> {{s.name}}</a><br/>
+	 {% endfor %}
+</span>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends "real_base.html" %}
+
+{% block content %}
+<span lang="es">
+<h1>Enlaces a Sitios Cubanos de Interés</h1>
+<p>Te ofrecemos un listado de sitios cubanos dentro y fuera de la isla. Sin 
+discriminaci&oacute;n de ning&uacute;n tipo. Si usted quiere agregar otros sitios puede hacerlo 
+siempre y cuando no sean sitios pornogr&aacute;ficos o algo por el estilo.</p>
+
+<form action = "/sitioscubanos/agregar/" method="post">
+	<label>Otro Sitio:&nbsp;</label>
+	<input name="otrositio" type="text"  value=""> 
+	<input type="submit" value="Agregar"></input> 
+
+	</form>
+
+{% for sitio in Sitios %}
+	<a href="{{sitio.href}}">{{sitio.name}}</a></br>
+{% endfor %}
+
+
+</span>
+
+{% endblock %} 

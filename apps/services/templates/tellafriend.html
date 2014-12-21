@@ -1,0 +1,51 @@
+{% extends "real_base.html" %}
+{% load i18n %}
+
+{% block content %}<h1>Tell a Friend about us</h1>
+<p>
+<div class="content taf">
+<p class="requiredFields">*Required fields</p>
+<form method="post" action="http://store.speedycomputers.us/tellit/">
+<p class="intro">Send this web site link to your friend by providing the following information and clicking 'Send to a Friend'.</p>
+<table border="0" width="75%" id="table1">
+	<tr>
+		<td width="423"><label for="friendName">Your Friend's Name </label></td>
+		<td>
+		<input value="" name="friendName" id="friendName" class="typeText" type="text" size="35"></td>
+	</tr>
+	<tr>
+		<td width="423">
+<label for="email">Your Friend's Email*</label></td>
+		<td>
+		<input value="" name="email" id="email" class="typeText" type="text" size="35"></td>
+	</tr>
+	<tr>
+		<td width="423">
+<label for="senderName">Your Name*&nbsp;&nbsp; </label></td>
+		<td>
+		<input value="" name="senderName" id="senderName" class="typeText" type="text" size="35"></td>
+	</tr>
+	<tr>
+		<td width="423">Your Email*&nbsp; </td>
+		<td>
+		<input value="" name="senderEmail" id="senderEmail" class="typeText" type="text" size="35"></td>
+	</tr>
+	</table>
+<p class="text">
+
+&nbsp; Message</p>
+<p class="text">
+
+&nbsp; <label for="message">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<textarea name="message" id="message" rows="7" cols="69">I thought you might be interested in this web site for computer services.
+
+store.speedycomputers.us</textarea></p>
+<p class="text required">
+&nbsp;&nbsp;<input src="http://ebookstore.sony.com/webassets/images/btn_sendToAFriend.gif" alt="Send to Friend" value="submit" type="image">
+</p>
+<p class="checkbox">
+<input value="yes" id="sendCopy" name="sendCopy" type="checkbox"><label for="sendCopy">Send a copy to my email</label>
+</p>
+</form>
+</p>
+<p>{% endblock %}</p>

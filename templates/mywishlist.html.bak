@@ -1,8 +1,0 @@
-﻿{% extends "cubabase.html" %}
-
-{% block rightcontent %}
-{% load monetize %}
-
-{% monetize_slot "header" "django" %}
-				  
-{% endblock %}
