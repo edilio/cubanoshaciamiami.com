@@ -105,7 +105,7 @@ INSTALLED_APPS = (
     'apps.services',
     'apps.ayudamemoria',
     'apps.presupuesto',
-    #'django_monetize',
+    'apps.django_monetize',
 )
 
 MONETIZE_DEFAULT = (

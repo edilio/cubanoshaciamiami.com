@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 <title>Cubanos Hacia Miami, emigracion de cuba a miami...</title>
-	<link rel="stylesheet" href="/wmedia/css/master.css">
-	<link rel="stylesheet" href="/wmedia/386/cgi-bin/icwebsiteelement.css">
+	<link rel="stylesheet" href="{% static 'css/master.css' %}">
+	<link rel="stylesheet" href="{% static 'css/icwebsiteelement.css' %}">
 	<meta name="robots" content="index, follow">
 	<meta name="description" content="Cubanos, Cuba, emigracion, miami, trabajo">
 	<meta name="keywords" content="Cubanos, Cuba, emigracion, miami, bombo, reclamacion">
@@ -21,26 +23,26 @@
 <center>
 <table width="760" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="140" height="32" rowspan="2"><img src="/wmedia/386/images/top_left.jpg" width="140" height="88"></td>
+    <td width="140" height="32" rowspan="2"><img src="{% static 'img/top_left.jpg' %}" width="140" height="88"></td>
     <td width="460" height="32">
-    <img height="80" src="/wmedia/cubanos/cubaflag.jpeg">
-    <img height="80" src="/wmedia/cubanos/bici.jpeg">
-    <img height="80" src="/wmedia/cubanos/usaflag.jpeg">
+    <img height="80" src="{% static 'img/cubaflag.jpeg' %}">
+    <img height="80" src="{% static 'img/bici.jpeg' %}">
+    <img height="80" src="{% static 'img/usaflag.jpeg' %}">
 
   </tr>
   <tr>
-      <td colspan="3"><img src="/wmedia/386/images/top_content_bar.jpg" width="620" height="1"></td>
+      <td colspan="3"><img src="{% static 'img/top_content_bar.jpg' %}" width="620" height="1"></td>
   </tr>
   <tr>
-      <td width="140" align="center" valign="top" background="/wmedia/386/images/striped_background.jpg">
+      <td width="140" align="center" valign="top" background="{% static 'img/striped_background.jpg' %}">
 
-	  <table><tr><td background="/wmedia/386/images/spacer.gif"><!-- Start buttons section -->
+	  <table><tr><td background="{% static 'img/spacer.gif' %}"><!-- Start buttons section -->
 	  	<center>
 	  		{% for m in Menus %}
             <a href="{{ m.href }}" title="{{m.name}}">{{m.name}}</a><br/>
             {% endfor %}
 				</center>
-	  	<img name="spacer" src="/wmedia/386/images/spacer.gif" width=1 height=1 border=0>
+	  	<img name="spacer" src="{% static 'img/spacer.gif' %}" width=1 height=1 border=0>
 	  	</td>
 	  	</tr>
 	  	</table>
@@ -74,9 +76,9 @@
       </td>
   </tr>
   <tr>
-    <td colspan="2"><img src="/wmedia/386/images/left_btm.jpg" width="600" height="19"></td>
-    <td width="66"><img src="/wmedia/386/images/mid_btm.jpg" width="66" height="19"></td>
-    <td width="265" background="/wmedia/386/images/mid_btm.jpg" style="background-image:/wmedia/386/images/motif01.jpg" valign="top"></td>
+    <td colspan="2"><img src="{% static 'img/left_btm.jpg' %}" width="600" height="19"></td>
+    <td width="66"><img src="{% static 'img/mid_btm.jpg' %}" width="66" height="19"></td>
+    <td width="265" background="{% static 'img/mid_btm.jpg' %}" style="background-image:{% static 'img/motif01.jpg' %}" valign="top"></td>
   </tr>
 </table>
 
