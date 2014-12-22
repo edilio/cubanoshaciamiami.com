@@ -16,7 +16,7 @@ env_file = os.path.join(BASE_DIR, '.env')
 dotenv.read_dotenv(env_file)
 
 DEBUG = bool(int(os.environ.get('DEBUG', '0')))
-print DEBUG
+
 TEMPLATE_DEBUG = DEBUG
 IN_DEV = bool(int(os.environ.get('IN_DEV', '0')))
 
@@ -38,7 +38,6 @@ DATABASES = {
     }
 }
 
-print DATABASES
 # Local time zone for this installation. Choices can be found here:
 # http://www.postgresql.org/docs/8.1/static/datetime-keywords.html#DATETIME-TIMEZONE-SET-TABLE
 # although not all variations may be possible on all operating systems.
