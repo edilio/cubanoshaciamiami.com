@@ -34,6 +34,6 @@ urlpatterns = patterns('',
     url(r'^pasaporte/', pasaporte),
     url(r'^processpasaporte/', processpasaporte),
     url(r'^extjs/', ext),
-    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain"))
+    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", content_type="text/plain"))
 
 )
