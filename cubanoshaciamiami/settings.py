@@ -16,6 +16,7 @@ env_file = os.path.join(BASE_DIR, '.env')
 dotenv.read_dotenv(env_file)
 
 DEBUG = bool(int(os.environ.get('DEBUG', '0')))
+DEBUG=True
 
 TEMPLATE_DEBUG = DEBUG
 IN_DEV = bool(int(os.environ.get('IN_DEV', '0')))
@@ -37,7 +38,6 @@ DATABASES = {
         'PORT': os.environ.get('PORT', '3306'),                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-
 # Local time zone for this installation. Choices can be found here:
 # http://www.postgresql.org/docs/8.1/static/datetime-keywords.html#DATETIME-TIMEZONE-SET-TABLE
 # although not all variations may be possible on all operating systems.
@@ -74,10 +74,11 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    # Uncomment the next line for simple clickjacking protection:
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'cubanoshaciamiami.urls'
